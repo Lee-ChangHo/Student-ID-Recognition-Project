@@ -59,21 +59,21 @@
 ## 7. 대략적인 학생증의 위치를 파악하기 위해 일정 픽셀값을 초과하는 영역의 범위를 찾고 그 범위에 맞게 이미지를 자른 후 역투영
 ### 노이즈 값들을 대략적으로 n(2000)개라 설정 후 n(2000)개 이상인 영역을 잘라내기.
 
-### 첫 번째. y축 프로젝션 값을 이용해 x축 범위 잘라내기
-### 두 번째. x축 프로젝션 값을 이용해 y축 범위 잘라내기
-### 세 번째. x축 프로젝션 + y축 프로젝션 두 값을 더한 걸로 학생증만 대강 잘라내기
+- 첫 번째. y축 프로젝션 값을 이용해 x축 범위 잘라내기
+- 두 번째. x축 프로젝션 값을 이용해 y축 범위 잘라내기
+- 세 번째. x축 프로젝션 + y축 프로젝션 두 값을 더한 걸로 학생증만 대강 잘라내기
 
 #### 출력 결과 : 학생증의 대략적인 위치를 기준으로 여백이 잘 날라간 걸 확인할 수 있음.
 
-### 첫 번째
+- 첫 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/e905f3bd-99c5-4ede-9e31-9358da5e53e9)
 
-### 두 번째
+- 두 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/9a1e6b36-7bf8-4a57-a3d1-026594b84947)
 
-### 세 번째.
+- 세 번째.
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/8e665ba3-c8ef-434f-a878-337f965f9385)
 
@@ -85,24 +85,24 @@
 
 ## 9. 여백을 제거하고 테두리를 딴 이미지를 학생증을 기준으로 정방향으로 회전시키기
  
-### 9-1. 시계방향, 반시계방향으로 각각 1도씩 15도, 15도 돌리며 그때 마다 이미지를 x축 프로젝션을 함.
-### 9-2. x축 프로젝션을 할때마다 y축의 픽셀값들의 합이 가장 긴 부분들을 모두 저장
-### 9-3. -15도,  +15도해서 총 30도를 회전 할 동안 출력 된 2번 값들을 비교해 가장 긴 부분이 정방향이라고 가정
-### 9-4. 3번에서 나온 값을 토대로 이미지 역투영
+- 9-1. 시계방향, 반시계방향으로 각각 1도씩 15도, 15도 돌리며 그때 마다 이미지를 x축 프로젝션을 함.
+- 9-2. x축 프로젝션을 할때마다 y축의 픽셀값들의 합이 가장 긴 부분들을 모두 저장
+- 9-3. -15도,  +15도해서 총 30도를 회전 할 동안 출력 된 2번 값들을 비교해 가장 긴 부분이 정방향이라고 가정
+- 9-4. 3번에서 나온 값을 토대로 이미지 역투영
 
-#### 시계 방향 회전 예시  
+- 시계 방향 회전 예시  
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/3796b982-d4eb-4929-8c69-306e6974fcad)
 
-#### 반시계 방향 회전 예시  
+- 반시계 방향 회전 예시  
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/074f487a-a1c6-4158-b0c7-d66b9ecec8f9)
 
-#### 정방향이라 가정한 부분		
+- 정방향이라 가정한 부분		
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/1d3ea830-aa96-44f3-b726-dbd32e14c5dd)
 
-#### 정방향 이미지의 역투영
+- 정방향 이미지의 역투영
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/724492b4-79ee-4532-9d7b-3d9cab998c4a)
 
@@ -110,11 +110,11 @@
 
 #### 출력 결과 : 좌측 하단, 좌측 상단, 우측 상단, 우측 하단 순서로 네 꼭지점을 입력 후 원근 변환(Perspective Transform) 함수를 이용해 이미지를 평평하게 펴기단, 이때 src 초기 입력값이 총 세가지 경우로 나뉘는데 각 경우에 따라 좌표값을 다르게 잡아야함. 따라서 세가지 경우에따라 나눴고 좌표값도 각각 다르게 설정함.
 
-### 1번 경우 : src 초기값이 반시계방향으로 회전된 학생증 일 경우.
-### 2번 경우 : src 초기값이 시계방향으로 회전된 학생증 일 경우.
-### 3번 경우 : src 초기값이 정방향인 학생증 일 경우.
+- 첫 번째 경우 : src 초기값이 반시계방향으로 회전된 학생증 일 경우.
+- 두 번째 경우 : src 초기값이 시계방향으로 회전된 학생증 일 경우.
+- 세 번째 경우 : src 초기값이 정방향인 학생증 일 경우.
 
-### 1번.
+- 첫 번째
 
 #### 입력 이미지 (src)
 
@@ -124,7 +124,7 @@
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/9bed8a98-cbfa-4823-b3d2-263682b42e57)
 
-### 2번.
+- 두 번째
 #### 입력 이미지 (src)
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/69ea3ce6-f301-4e80-acaa-6398f28946a9)
@@ -133,7 +133,7 @@
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/c7fa31dd-d1be-4e95-a0f9-f7c698ef2c86)
 
-### 3번.
+- 세 번째
 #### 입력 이미지 (src)
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/f84e87e8-d5ab-41d8-993d-8e8927db6168)
@@ -158,33 +158,32 @@
 
 #### 출력 결과 : 학번까지 잘 출력된 것을 확인 함.
 
-### 첫 번째 : 원본
-### 두 번째 : 학생증만 평평하게 출력
-### 세 번째 : 학번만 평평하게 출력
+- 첫 번째 : 원본
+- 두 번째 : 학생증만 평평하게 출력
+- 세 번째 : 학번만 평평하게 출력
 
 
-
-### 첫 번째
+- 첫 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/eea345c1-6a51-474b-9c85-032b0cd6511d)
 
-### 두 번째
+- 두 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/0093fe6e-e534-4da6-8328-bcbf32197408)
 
-### 세 번째
+- 세 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/0514ba83-4744-4fa6-9a84-4dc96d23f5a3)
 
-### 첫 번째
+- 첫 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/69984297-635d-4623-accf-7de98956f261)
 
-### 두 번째
+- 두 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/07cd6d21-0d27-4286-ad9b-5dbe2373f342)
 
-### 세 번째
+- 세 번째
 
 ![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/970e06b1-da4a-4e79-a3c5-bda67399529a)
 
