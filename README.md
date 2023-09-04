@@ -1,4 +1,6 @@
 # Student-ID-Recognition-Project
+# url : https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/blob/main/Main%20Project%20-%20%ED%95%99%EC%83%9D%EC%A6%9D%20%ED%95%99%EB%B2%88%20%EC%9D%B8%EC%8B%9D.ipynb
+
 
 ## Project Experience
 
