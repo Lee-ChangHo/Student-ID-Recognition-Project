@@ -6,16 +6,16 @@
 ### 이미지가 잘 불러와지나 테스트
 #### 출력 결과 : 원본 컬러 이미지 출력
 
-![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/5bf46a5a-bf64-4371-b1b5-5a331bb33ce9)
+![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/5bf46a5a-bf64-4371-b1b5-5a331bb33ce9) 
 
 ## 2. 이미지 흑백으로 변경
 ### 이미지 인식을 더 잘 되게 하기 위해 채널을 하나로 줄이는 과정
 
 #### 출력 결과 : Grayscale 된 흑백 이미지 출력, 채널 0에 대해 명암 값에 따른 픽셀 수의 분포 그래프 궁금해서 출력해봄 
 
-### 흑백 이미지
+### 흑백 이미지                                                                
 
-![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/f3197c3e-c4ec-441f-a515-cdc97b908bf1)
+![image](https://github.com/Lee-ChangHo/Student-ID-Recognition-Project/assets/110157972/f3197c3e-c4ec-441f-a515-cdc97b908bf1)       
 
 ### 흑백이미지의 히스토그램
 
